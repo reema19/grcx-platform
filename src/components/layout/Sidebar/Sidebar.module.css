@@ -1,0 +1,205 @@
+.sidebar{
+
+    width:280px;
+
+    min-height:100vh;
+
+    background:var(--color-surface);
+
+    border-right:1px solid var(--color-border);
+
+    padding:24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:32px;
+
+}
+
+
+/* Brand */
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.logoIcon{
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:14px;
+
+    background:var(--color-primary);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.brand h2{
+
+    font-size:22px;
+
+    font-weight:800;
+
+}
+
+
+.brand span{
+
+    font-size:12px;
+
+    color:var(--color-text-muted);
+
+}
+
+
+
+/* Navigation */
+
+.navigation{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    flex:1;
+
+}
+
+
+
+/* Copilot */
+
+.copilot{
+
+    padding:16px;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(88,101,242,.18),
+        rgba(88,101,242,.05)
+    );
+
+    border:1px solid rgba(88,101,242,.25);
+
+}
+
+
+.copilotIcon{
+
+    margin-bottom:12px;
+
+    color:var(--color-primary);
+
+}
+
+
+.copilot h3{
+
+    font-size:15px;
+
+}
+
+
+.copilot p{
+
+    color:var(--color-text-secondary);
+
+    font-size:13px;
+
+    margin:6px 0 14px;
+
+}
+
+
+.copilot button{
+
+    width:100%;
+
+    height:36px;
+
+    border-radius:10px;
+
+    background:var(--color-primary);
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+
+
+/* Profile */
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding-top:16px;
+
+    border-top:1px solid var(--color-border);
+
+}
+
+
+.avatar{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    background:var(--color-primary);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:700;
+
+}
+
+
+.profile h4{
+
+    font-size:14px;
+
+}
+
+
+.profile span{
+
+    font-size:12px;
+
+    color:var(--color-text-muted);
+
+}

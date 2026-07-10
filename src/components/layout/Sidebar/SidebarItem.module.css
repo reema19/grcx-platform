@@ -1,0 +1,57 @@
+.item{
+
+    height:46px;
+
+    padding:0 14px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:var(--color-text-secondary);
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.2s ease;
+
+}
+
+
+.icon{
+
+    display:flex;
+
+}
+
+
+
+.item:hover{
+
+    background:var(--color-surface-hover);
+
+    color:white;
+
+}
+
+
+
+.active{
+
+    background:rgba(88,101,242,.15);
+
+    color:white;
+
+}
+
+
+.active .icon{
+
+    color:var(--color-primary);
+
+}
