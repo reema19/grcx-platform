@@ -11,12 +11,10 @@ import { useNavigate } from "react-router-dom";
 import styles from "./ViolationDetails.module.css";
 
 export default function ViolationDetails() {
-
   const navigate = useNavigate();
 
   return (
     <DashboardLayout>
-
       <div className={styles.container}>
 
         {/* Header */}
@@ -26,13 +24,15 @@ export default function ViolationDetails() {
           <div>
 
             <div className={styles.badge}>
-              <ShieldAlert size={15}/>
+              <ShieldAlert size={15} />
               Critical
             </div>
 
             <h1>Excessive Privileged Access</h1>
 
-            <p>Detected on May 24, 2026</p>
+            <p>
+              Detected on May 24, 2026 • Identity ID #EMP-10241
+            </p>
 
           </div>
 
@@ -44,18 +44,18 @@ export default function ViolationDetails() {
 
         </section>
 
-        {/* Identity + Summary */}
+        {/* Employee + Summary */}
 
         <section className={styles.grid}>
 
           <div className={styles.card}>
 
-            <h3>Identity</h3>
+            <h3>Employee Information</h3>
 
             <div className={styles.identity}>
 
               <div className={styles.avatar}>
-                <User size={22}/>
+                <User size={22} />
               </div>
 
               <div>
@@ -63,7 +63,7 @@ export default function ViolationDetails() {
                 <h4>Ahmed Al-Qahtani</h4>
 
                 <span>
-                  <Building2 size={14}/>
+                  <Building2 size={14} />
                   Finance Department
                 </span>
 
@@ -80,7 +80,8 @@ export default function ViolationDetails() {
             <p className={styles.summary}>
               The employee was transferred from the Finance department
               to Operations, however privileged permissions remained
-              active in Active Directory.
+              active in Active Directory, creating an excessive access
+              risk that violates multiple compliance controls.
             </p>
 
           </div>
@@ -103,26 +104,26 @@ export default function ViolationDetails() {
 
         </section>
 
-        {/* Framework */}
+        {/* Frameworks */}
 
         <section className={styles.card}>
 
-          <h3>Mapped Controls</h3>
+          <h3>Affected Frameworks</h3>
 
           <div className={styles.frameworks}>
 
             <div className={styles.framework}>
-              <ShieldCheck size={18}/>
+              <ShieldCheck size={18} />
               SAMA CSF
             </div>
 
             <div className={styles.framework}>
-              <ShieldCheck size={18}/>
+              <ShieldCheck size={18} />
               NCA ECC
             </div>
 
             <div className={styles.framework}>
-              <ShieldCheck size={18}/>
+              <ShieldCheck size={18} />
               ISO 27001
             </div>
 
@@ -130,7 +131,7 @@ export default function ViolationDetails() {
 
         </section>
 
-        {/* AI */}
+        {/* Review CTA */}
 
         <section className={styles.aiCard}>
 
@@ -138,16 +139,17 @@ export default function ViolationDetails() {
 
             <div className={styles.aiTitle}>
 
-              <Sparkles size={18}/>
+              <Sparkles size={18} />
 
-              AI Recommendation
+              Review AI Recommendation
 
             </div>
 
             <p>
-              Remove privileged access from Domain Admin and SWIFT
-              Operator groups, notify the Identity Management team,
-              and create a remediation task automatically.
+              GRCx has already analyzed this violation and prepared a
+              complete remediation recommendation, including the
+              affected regulations, security impact, and suggested
+              actions. Review the recommendation before applying it.
             </p>
 
           </div>
@@ -156,14 +158,13 @@ export default function ViolationDetails() {
             className={styles.actionButton}
             onClick={() => navigate("/analysis")}
           >
-            Generate Remediation
-            <ChevronRight size={18}/>
+            Review Recommendation
+            <ChevronRight size={18} />
           </button>
 
         </section>
 
       </div>
-
     </DashboardLayout>
   );
 }

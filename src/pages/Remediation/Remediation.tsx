@@ -21,22 +21,24 @@ export default function Remediation() {
 
       <div className={styles.container}>
 
+        {/* Header */}
+
         <header className={styles.header}>
 
           <div>
 
             <span className={styles.badge}>
-              AI GENERATED PLAN
+              READY TO EXECUTE
             </span>
 
             <h1>
-              Recommended Remediation Plan
+              Review Remediation Plan
             </h1>
 
             <p>
-              Based on the detected violation and applicable
-              regulatory controls, GRCx generated the following
-              remediation workflow.
+              Review the AI-generated remediation workflow before
+              applying the recommended actions across your identity
+              and compliance environment.
             </p>
 
           </div>
@@ -56,8 +58,8 @@ export default function Remediation() {
               <h3>Remove Excessive Privileges</h3>
 
               <p>
-                Remove Domain Admin and SWIFT Operator access
-                from the employee.
+                Remove Domain Admin and SWIFT Operator access from
+                the affected identity.
               </p>
 
             </div>
@@ -70,11 +72,11 @@ export default function Remediation() {
 
             <div>
 
-              <h3>Review Identity Role</h3>
+              <h3>Recalculate Identity Role</h3>
 
               <p>
-                Recalculate permissions according to the
-                employee's current department.
+                Rebuild permissions using the employee's current
+                organizational assignment.
               </p>
 
             </div>
@@ -87,11 +89,11 @@ export default function Remediation() {
 
             <div>
 
-              <h3>Notify Security Team</h3>
+              <h3>Create Security Task</h3>
 
               <p>
-                Create a security task and notify the Identity
-                Governance team.
+                Notify the Identity Governance team and assign
+                remediation ownership automatically.
               </p>
 
             </div>
@@ -104,11 +106,11 @@ export default function Remediation() {
 
             <div>
 
-              <h3>Compliance Verification</h3>
+              <h3>Verify Compliance Controls</h3>
 
               <p>
-                Validate that all mapped SAMA and NCA controls
-                are satisfied after remediation.
+                Validate mapped SAMA, NCA and ISO controls before
+                closing the incident.
               </p>
 
             </div>
@@ -130,9 +132,7 @@ export default function Remediation() {
               <h3>Expected Result</h3>
 
               <p>
-
                 Estimated Risk Reduction
-
               </p>
 
             </div>
@@ -142,6 +142,8 @@ export default function Remediation() {
           <h2>96 → 18</h2>
 
         </section>
+
+        {/* Execute */}
 
         <button
           className={styles.button}

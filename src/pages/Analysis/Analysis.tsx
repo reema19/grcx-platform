@@ -19,6 +19,8 @@ export default function Analysis() {
 
       <div className={styles.container}>
 
+        {/* Header */}
+
         <header className={styles.header}>
 
           <div>
@@ -33,8 +35,9 @@ export default function Analysis() {
 
             <p>
               GRCx analyzed the identity, permissions,
-              organizational context and mapped the
-              violation against regulatory frameworks.
+              organizational context, historical identity
+              events and mapped the detected violation
+              against applicable regulatory frameworks.
             </p>
 
           </div>
@@ -49,6 +52,8 @@ export default function Analysis() {
 
         </header>
 
+        {/* AI Reasoning */}
+
         <section className={styles.card}>
 
           <div className={styles.title}>
@@ -61,24 +66,29 @@ export default function Analysis() {
 
           <p>
 
-            The AI detected that the employee changed
-            departments while privileged financial
-            permissions remained active. Based on identity
-            lifecycle events, role definitions and access
-            history, this creates a high probability of
-            unauthorized financial operations.
+            The employee changed departments while
+            privileged financial permissions remained
+            active. Identity lifecycle records indicate
+            that access rights were never recalculated,
+            creating a high probability of unauthorized
+            financial operations.
 
           </p>
 
         </section>
+
+        {/* Two Cards */}
 
         <section className={styles.grid}>
 
           <div className={styles.card}>
 
             <div className={styles.title}>
+
               <ShieldCheck size={18}/>
-              Regulations
+
+              Applicable Regulations
+
             </div>
 
             <ul>
@@ -96,8 +106,11 @@ export default function Analysis() {
           <div className={styles.card}>
 
             <div className={styles.title}>
+
               <Sparkles size={18}/>
+
               AI Findings
+
             </div>
 
             <ul>
@@ -106,7 +119,9 @@ export default function Analysis() {
 
               <li>Privilege escalation risk</li>
 
-              <li>Inactive review process</li>
+              <li>Identity lifecycle not updated</li>
+
+              <li>Access review overdue</li>
 
             </ul>
 
@@ -114,12 +129,38 @@ export default function Analysis() {
 
         </section>
 
+        {/* Recommendation Preview */}
+
+        <section className={styles.card}>
+
+          <div className={styles.title}>
+
+            <Sparkles size={18}/>
+
+            Recommended Action
+
+          </div>
+
+          <p>
+
+            GRCx recommends revoking unnecessary privileged
+            permissions, recalculating the employee role,
+            notifying the Identity Governance team and
+            validating compliance controls before closing
+            the incident.
+
+          </p>
+
+        </section>
+
+        {/* CTA */}
+
         <button
           className={styles.nextButton}
           onClick={() => navigate("/remediation")}
         >
 
-          Continue to Remediation
+          Review Remediation Plan
 
           <ChevronRight size={18}/>
 
