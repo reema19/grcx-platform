@@ -3,18 +3,49 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Landing from "../pages/Landing/Landing";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Violations from "../pages/Violations/Violations";
+import ViolationDetails from "../pages/ViolationDetails/ViolationDetails";
+import Analysis from "../pages/Analysis/Analysis";
+import Remediation from "../pages/Remediation/Remediation";
+import Success from "../pages/Success/Success";
 import Reports from "../pages/Reports/Reports";
 import Settings from "../pages/Settings/Settings";
 
 export default function AppRouter() {
   return (
     <Routes>
+
       <Route path="/" element={<Landing />} />
+
       <Route path="/dashboard" element={<Dashboard />} />
+
       <Route path="/violations" element={<Violations />} />
+
+      <Route
+        path="/violations/:id"
+        element={<ViolationDetails />}
+      />
+
+      <Route
+        path="/analysis"
+        element={<Analysis />}
+      />
+
+      <Route
+        path="/remediation"
+        element={<Remediation />}
+      />
+
+      <Route
+        path="/success"
+        element={<Success />}
+      />
+
       <Route path="/reports" element={<Reports />} />
+
       <Route path="/settings" element={<Settings />} />
+
       <Route path="*" element={<Navigate to="/" replace />} />
+
     </Routes>
   );
 }

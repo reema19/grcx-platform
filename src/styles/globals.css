@@ -6,22 +6,22 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
+    height: 100%;
 }
 
-body{
+body {
+    font-family: 'Urbanist', sans-serif;
+    background: var(--color-background);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    height: 100%;
+}
 
-    font-family:'Urbanist',sans-serif;
-
-    background:var(--color-background);
-
-    color:var(--color-text-primary);
-
-    -webkit-font-smoothing:antialiased;
-
-    text-rendering:optimizeLegibility;
-
+#root {
+    height: 100%;
 }
 
 button{

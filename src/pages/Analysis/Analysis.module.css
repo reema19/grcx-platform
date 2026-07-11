@@ -1,0 +1,265 @@
+.container{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    padding-bottom:40px;
+    animation:fadeIn .35s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= HEADER ================= */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:24px;
+
+}
+
+.label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    background:rgba(88,101,242,.15);
+
+    color:var(--color-primary);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.06em;
+
+}
+
+.header h1{
+
+    margin:18px 0 10px;
+
+    font-size:32px;
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+.header p{
+
+    max-width:760px;
+
+    color:var(--color-text-secondary);
+
+    line-height:1.8;
+
+    font-size:14px;
+
+}
+
+
+/* ================= SCORE ================= */
+
+.score{
+
+    width:170px;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    background:var(--color-surface);
+
+    border:1px solid var(--color-border);
+
+    text-align:center;
+
+}
+
+.score span{
+
+    color:var(--color-text-muted);
+
+    font-size:13px;
+
+}
+
+.score h2{
+
+    margin-top:10px;
+
+    font-size:52px;
+
+    color:var(--color-primary);
+
+    line-height:1;
+
+}
+
+
+/* ================= GRID ================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+
+/* ================= CARD ================= */
+
+.card{
+
+    background:var(--color-surface);
+
+    border:1px solid var(--color-border);
+
+    border-radius:18px;
+
+    padding:24px;
+
+}
+
+.title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.card p{
+
+    color:var(--color-text-secondary);
+
+    line-height:1.9;
+
+    font-size:14px;
+
+}
+
+.card ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    margin-top:4px;
+
+    padding-left:18px;
+
+}
+
+.card li{
+
+    color:var(--color-text-secondary);
+
+    line-height:1.7;
+
+}
+
+
+/* ================= CTA ================= */
+
+.nextButton{
+
+    align-self:flex-end;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    height:50px;
+
+    padding:0 24px;
+
+    border-radius:14px;
+
+    background:var(--color-primary);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.2s;
+
+}
+
+.nextButton:hover{
+
+    transform:translateY(-2px);
+
+    opacity:.95;
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1100px){
+
+.header{
+
+flex-direction:column;
+
+}
+
+.score{
+
+width:100%;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.nextButton{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+}
