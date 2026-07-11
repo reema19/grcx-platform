@@ -1,8 +1,13 @@
+import { useState } from "react";
 import DashboardLayout from "../../layouts/DashboardLayout";
 import {
   BrainCircuit,
   ShieldCheck,
   Sparkles,
+  CheckCircle2,
+  UserCog,
+  BellRing,
+  FileCheck2,
   ChevronRight,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -10,13 +15,11 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Analysis.module.css";
 
 export default function Analysis() {
-
   const navigate = useNavigate();
+  const [showConfirm, setShowConfirm] = useState(false);
 
   return (
-
     <DashboardLayout>
-
       <div className={styles.container}>
 
         {/* Header */}
@@ -58,7 +61,7 @@ export default function Analysis() {
 
           <div className={styles.title}>
 
-            <BrainCircuit size={20}/>
+            <BrainCircuit size={20} />
 
             AI Reasoning
 
@@ -77,7 +80,7 @@ export default function Analysis() {
 
         </section>
 
-        {/* Two Cards */}
+        {/* Regulations + Findings */}
 
         <section className={styles.grid}>
 
@@ -85,7 +88,7 @@ export default function Analysis() {
 
             <div className={styles.title}>
 
-              <ShieldCheck size={18}/>
+              <ShieldCheck size={18} />
 
               Applicable Regulations
 
@@ -107,7 +110,7 @@ export default function Analysis() {
 
             <div className={styles.title}>
 
-              <Sparkles size={18}/>
+              <Sparkles size={18} />
 
               AI Findings
 
@@ -129,47 +132,199 @@ export default function Analysis() {
 
         </section>
 
-        {/* Recommendation Preview */}
+        {/* Remediation Plan */}
 
-        <section className={styles.card}>
+        <section className={styles.plan}>
 
-          <div className={styles.title}>
+          <div className={styles.planHeader}>
 
-            <Sparkles size={18}/>
+            <div>
 
-            Recommended Action
+              <h2>
+                Recommended Remediation Plan
+              </h2>
+
+              <p>
+                Based on the detected violation, GRCx generated
+                the following remediation workflow.
+              </p>
+
+            </div>
+
+            <div className={styles.riskReduction}>
+
+              <span>Expected Risk Reduction</span>
+
+              <h3>96 → 18</h3>
+
+            </div>
 
           </div>
 
-          <p>
+          <div className={styles.timeline}>
 
-            GRCx recommends revoking unnecessary privileged
-            permissions, recalculating the employee role,
-            notifying the Identity Governance team and
-            validating compliance controls before closing
-            the incident.
+            <div className={styles.step}>
 
-          </p>
+              <CheckCircle2 size={20} />
+
+              <div>
+
+                <h4>Remove Excessive Privileges</h4>
+
+                <p>
+                  Remove Domain Admin and SWIFT Operator access.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className={styles.step}>
+
+              <UserCog size={20} />
+
+              <div>
+
+                <h4>Review Identity Role</h4>
+
+                <p>
+                  Recalculate permissions based on the employee's current role.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className={styles.step}>
+
+              <BellRing size={20} />
+
+              <div>
+
+                <h4>Notify Security Team</h4>
+
+                <p>
+                  Automatically create a remediation task and notify the team.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className={styles.step}>
+
+              <FileCheck2 size={20} />
+
+              <div>
+
+                <h4>Compliance Verification</h4>
+
+                <p>
+                  Validate SAMA, NCA and ISO controls before closing the incident.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div className={styles.actions}>
+
+            <button
+              className={styles.nextButton}
+              onClick={() => setShowConfirm(true)}
+            >
+
+              Apply Remediation
+
+              <ChevronRight size={18} />
+
+            </button>
+
+          </div>
 
         </section>
 
-        {/* CTA */}
+        {/* Confirmation Modal */}
 
-        <button
-          className={styles.nextButton}
-          onClick={() => navigate("/remediation")}
-        >
+        {showConfirm && (
 
-          Review Remediation Plan
+          <div className={styles.overlay}>
 
-          <ChevronRight size={18}/>
+            <div className={styles.modal}>
 
-        </button>
+              <div className={styles.modalHeader}>
+
+                <ShieldCheck size={24} />
+
+                <div className={styles.modalTitle}>
+
+                  <h3>
+                    Apply AI Recommendation?
+                  </h3>
+
+                  <p>
+                    This action will automatically perform the following tasks.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div className={styles.modalList}>
+
+                <div className={styles.modalItem}>
+                  <CheckCircle2 size={18}/>
+                  Remove excessive privileges
+                </div>
+
+                <div className={styles.modalItem}>
+                  <CheckCircle2 size={18}/>
+                  Create remediation task
+                </div>
+
+                <div className={styles.modalItem}>
+                  <CheckCircle2 size={18}/>
+                  Notify security team
+                </div>
+
+                <div className={styles.modalItem}>
+                  <CheckCircle2 size={18}/>
+                  Update compliance audit trail
+                </div>
+
+              </div>
+
+              <div className={styles.modalActions}>
+
+                <button
+                  className={styles.cancelButton}
+                  onClick={() => setShowConfirm(false)}
+                >
+                  Cancel
+                </button>
+
+                <button
+                  className={styles.applyButton}
+                  onClick={() => navigate("/success")}
+                >
+
+                  Apply
+
+                  <ChevronRight size={16}/>
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        )}
 
       </div>
-
     </DashboardLayout>
-
   );
-
 }
